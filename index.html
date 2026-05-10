@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Accessoires</title>
+
+    <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+background:#0d0d0d;
+color:white;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:rgba(0,0,0,0.95);
+border-bottom:1px solid gold;
+position:sticky;
+top:0;
+z-index:1000;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+border:2px solid gold;
+object-fit:cover;
+}
+
+.logo span{
+color:gold;
+font-size:20px;
+font-weight:bold;
+letter-spacing:2px;
+}
+
+/* MENU */
+
+.nav-links{
+display:flex;
+gap:20px;
+list-style:none;
+flex-wrap:wrap;
+justify-content:center;
+align-items:center;
+}
+
+.nav-links a{
+color:gold;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+font-size:16px;
+}
+
+.nav-links a:hover{
+color:white;
+}
+
+/* PANIER */
+
+.cart{
+color:gold;
+font-size:20px;
+font-weight:bold;
+background:#1a1a1a;
+padding:8px 15px;
+border-radius:10px;
+border:1px solid gold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.cart:hover{
+background:gold;
+color:black;
+transform:scale(1.05);
+}
+
+/* SECTIONS */
+
+section{
+padding:70px 20px;
+text-align:center;
+}
+
+section h1,
+section h2{
+margin-bottom:15px;
+}
+
+section p{
+margin-bottom:10px;
+}
+
+/* HERO IMAGES */
+
+.hero-images{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+max-width:1100px;
+
+margin:auto;
+
+padding-top:30px;
+
+justify-content:center;
+
+}
+
+.hero-images img{
+
+width:100%;
+
+height:240px;
+
+object-fit:contain;
+
+background:#111;
+
+padding:5px;
+
+border-radius:15px;
+
+border:2px solid gold;
+
+transition:0.4s;
+
+cursor:pointer;
+
+box-shadow:0 0 10px rgba(255,215,0,0.2);
+
+}
+
+.hero-images img:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px gold;
+
+}
+
+/* SEARCH */
+
+#search{
+padding:12px;
+width:70%;
+max-width:400px;
+margin:25px auto;
+display:block;
+border:1px solid gold;
+background:#1a1a1a;
+color:white;
+border-radius:8px;
+outline:none;
+}
+
+/* PRODUCTS */
+
+.products{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+}
+
+.card{
+background:#1a1a1a;
+padding:15px;
+border-radius:15px;
+width:240px;
+transition:0.3s;
+cursor:pointer;
+border:1px solid rgba(255,215,0,0.2);
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:gold;
+box-shadow:0 5px 20px rgba(255,215,0,0.3);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:contain;
+background:#111;
+padding:5px;
+border-radius:10px;
+border:2px solid gold;
+}
+
+.card h3{
+margin-top:10px;
+}
+
+.price{
+color:gold;
+font-weight:bold;
+margin-top:10px;
+font-size:18px;
+}
+
+/* BUTTON */
+
+button{
+margin-top:12px;
+padding:10px 18px;
+background:gold;
+border:none;
+font-weight:bold;
+cursor:pointer;
+border-radius:8px;
+transition:0.3s;
+}
+
+button:hover{
+background:white;
+transform:scale(1.05);
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal-content{
+background:#222;
+padding:25px;
+border-radius:15px;
+border:2px solid gold;
+text-align:center;
+max-width:350px;
+width:100%;
+}
+
+/* CONTACT */
+
+.instagram{
+color:gold;
+text-decoration:none;
+font-weight:bold;
+}
+
+.instagram:hover{
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+padding:25px;
+text-align:center;
+background:black;
+color:gold;
+border-top:1px solid gold;
+margin-top:40px;
+}
+
+
+@media(max-width:600px){
+.hero-images img{width:120px}
+.card{width:90%}
+.navbar{justify-content:center;gap:10px}
+}
+
+
+@media screen and (min-width:50px) and (max-width:599px){
+
+.navbar{
+justify-content:center;
+align-items:center;
+gap:10px;
+flex-direction:column;
+}
+
+.hero-images{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+justify-items:center;
+}
+
+.hero-images img{
+width:100%;
+height:150px;
+object-fit:contain;
+}
+
+.card{
+width:90%;
+max-width:300px;
+}
+
+.products{
+justify-content:center;
+align-items:center;
+}
+
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="logoysf.jpeg" alt="logo">
+            <span>ROYAL ACCESSOIRES</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#products">Produits</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="home">
+        <h1>Bienvenue chez Royal Accessoires</h1>
+        <p>Style élégant et royal</p>
+        <div class="hero-images">
+            <img src="2.jpeg">
+            <img src="3.jpeg">
+            <img src="4.jpeg">
+            <img src="5.jpeg" alt="">
+            <img src="6.jpeg" alt="">
+            <img src="7.jpeg" alt="">
+            <img src="8.jpeg" alt="">
+            <img src="9.jpeg" alt="">
+            <img src="10.jpeg" alt="">
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Nos Produits</h2>
+        <input type="text" id="search" placeholder="Rechercher un produit...">
+
+        <div class="products" id="productList">
+            <!-- Produit 1 -->
+            <div class="card" onclick="openModal('Collier Royal', '140 MAD')">
+                <img src="1.jpeg" alt="Collier Royal">
+                <h3>Collier Royal</h3>
+                <p class="price">140 MAD</p>
+                <button class="btn-add" >Ajouter</button>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="card" onclick="openModal('Bracelet Luxe', '135 MAD')">
+                <img src="euroysf.jpeg" alt="Bracelet Luxe">
+                <h3>Bracelet Luxe</h3>
+                <p class="price">135 MAD</p>
+                <button class="btn-add">Ajouter</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>📞numéro :0776850657</p>
+        <p>📧gmail :royalaccessoires@gmail.com</p>
+        <p>📷 Instagram :royal_accessoires6</p>
+    </section>
+
+    <!-- Modal wa7da l-ga3 l-produits -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <h3 id="modalTitle"></h3>
+            <p id="modalPrice" style="color: gold;"></p>
+            <p>Pour acheter et obtenir plus d'informations</p>
+            
+           <a href="https://api.whatsapp.com/send/?phone=212776850657&text&type=phone_number&app_absent=0" target="_blank"> <button class="close-btn" onclick="closeModal()">continuer</button></a><br>
+           <button onclick="closeModal()" class="close-btn">Anuler</button>
+</div>
+    </div>
+
+    <footer>© 2026 Royal Accessoires</footer>
+
+    <script>
+        const modal = document.getElementById('productModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPrice = document.getElementById('modalPrice');
+        const searchInput = document.getElementById('search');
+
+        // Fonction bach t7al modal
+        function openModal(name, price) {
+            modal.style.display = 'flex';
+            modalTitle.innerText = name;
+            modalPrice.innerText = price;
+        }
+
+        // Fonction bach t-sed modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Search logic
+        searchInput.addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                let title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(filter)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+
+        // Sed modal ila clika l-user berra l-box
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
